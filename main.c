@@ -2,17 +2,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void imprimir_vetor(int *v, int tam) {
+  int i;
+  for (i = 0; i < tam; i++) {
+    printf("%d ", *(v + i));
+  }
+}
+
 int main() {
-  int *valor1, valor2 = 50;
-  char *letra1, letra2 = 'g';
+  int i, vet[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-  valor1 = &valor2;
-  letra1 = &letra2;
+  printf("%p\t%p\n", vet, &vet[0]);
 
-  printf("Valor da variavel valor2 : %d\n", valor2);
-  printf("Enderecao da varaiavel valor2: %p\n", &valor2);
-  printf("Conteudo da variavel valor1: %p\n", valor1);
-  printf("Conteudo apontado pelo variavel valor1: %d\n", *valor1);
+  for (i = 0; i < 10; i++) {
+    printf("%d", *(vet + i));
+  }
+
+  printf("\n\n");
+  imprimir_vetor(vet, 10);
 
   return 0;
 }
