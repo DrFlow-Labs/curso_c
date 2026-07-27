@@ -1,36 +1,18 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
-
-/*
-        Aula 192: Exercicio 1
-
-    1) Escreva um procedimento que receba um vetor inteiro, seu tamanho e os endereços
-    de duas variáveis inteiras, menor e maior, salve nestas variáveis o menor e o maior
-    valor do vetor.
-*/
-void maior_menor(int *vet,int tam, int *menor, int *maior) {
-    int i;
-    *menor = *vet;
-    *maior = *vet;
-    for (i=1;i<tam;i++) {
-        if (*menor > *(vet + i)) {
-            *menor = *(vet + i);
-        }
-        if (*maior < *(vet + i)) {
-            *maior = *(vet + i);
-        }
-    }
-}
 int main() {
-    int menor,maior, v[10] = {34,234,34,12,4,5435,324,45,43,133};
-    printf("Maior valor: %d\n",maior);
-    printf("Menor valor: %d\n",menor);
+  int *valor1, valor2 = 50;
+  char *letra1, letra2 = 'g';
 
-    maior_menor(v,10,&menor,&maior);
+  valor1 = &valor2;
+  letra1 = &letra2;
 
-    printf("Maior valor: %d\n",maior);
-    printf("Menor valor: %d\n",menor);
+  printf("Valor da variavel valor2 : %d\n", valor2);
+  printf("Enderecao da varaiavel valor2: %p\n", &valor2);
+  printf("Conteudo da variavel valor1: %p\n", valor1);
+  printf("Conteudo apontado pelo variavel valor1: %d\n", *valor1);
 
-    return 0;
+  return 0;
 }
