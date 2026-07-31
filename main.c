@@ -2,24 +2,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void imprimir_vetor(int *v, int tam) {
-  int i;
-  for (i = 0; i < tam; i++) {
-    printf("%d ", *(v + i));
+void maior_menor(int vetor[], int tam, int *menor, int *maior) {
+  *maior = vetor[0];
+  *menor = vetor[0];
+  for (int i = 0; i < tam; i++) {
+    if (vetor[i] > *maior) {
+      *maior = vetor[i];
+    }
+    if (vetor[i] < *menor) {
+      *menor = vetor[i];
+    }
   }
+  printf("maior numero: %d\n",*maior);
+  printf("menor numero: %d\n",*menor);
 }
 
 int main() {
-  int i, vet[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-
-  printf("%p\t%p\n", vet, &vet[0]);
-
-  for (i = 0; i < 10; i++) {
-    printf("%d", *(vet + i));
-  }
-
-  printf("\n\n");
-  imprimir_vetor(vet, 10);
-
+  int menor = 0, maior = 0, vetor[] = {110, 265, 30, 410, 544, 684, 74, 880, 95};
+  maior_menor(vetor, 9, &menor, &maior);
+  printf("Menor valor: %d\n", menor);
+  printf("Maior valor: %d\n", maior);
   return 0;
 }
