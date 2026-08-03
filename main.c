@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Alocação dinâmica de memória com a função MALLOC | Aula 197
+// Alocação dinâmica de memória com a função CALLOC | Aula 198
 
 int main() {
     int *x;
-    x = malloc(sizeof(int));
+    x = calloc(1,sizeof(int));
     if (x) {
         printf("malloc ok\n");
         printf("X: %d\n",*x);
