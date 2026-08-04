@@ -2,13 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*
-    Aula 200: Alocação dinâmica de memória com a função realloc.
-    -> Retorna um ponteiro para a nova região de memória.
-    -> Se o ponteiro for nulo ela aloca memória.
-    -> Se o novo tamanho for zero a memória é liberada.
-    -> Se não houver memória suficiente retorna null.
-*/
+// como liberar memória alocada dinamicamente com a função free()? Aula 201
 
 int main() {
     int tam, *vet;
@@ -27,9 +21,10 @@ int main() {
         scanf("%d", &tam);
         vet = (int *) realloc(vet, tam * sizeof(int));
         printf("Vetor realocado :\n");
-       for (int i = 0; i < tam; i++) {
+        for (int i = 0; i < tam; i++) {
             printf("%d ", vet[i]);
         }
+        free(vet);
     }else {
         printf("Erro ao alocar o memoria!");
     }
